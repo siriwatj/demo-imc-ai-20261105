@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="th"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@400;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-surface-variant":"#a098b0","surface-container-high":"#1e1e30","on-primary-fixed-variant":"#8c0038","primary":"#ff2d78","on-secondary-container":"#c0fff4","on-primary":"#1a0010","secondary":"#00ffcc","on-secondary-fixed-variant":"#004d4d","on-secondary-fixed":"#001a1a","primary-fixed":"#ffe0ec","outline-variant":"#302840","surface-container-low":"#111118","inverse-on-surface":"#0a0a12","surface-variant":"#1e1e30","tertiary-fixed-dim":"#ffe04a","on-secondary":"#001a1a","on-tertiary-container":"#fff0c0","on-tertiary-fixed":"#1a1000","on-error-container":"#ffa0a0","on-primary-container":"#ffe0ec","primary-fixed-dim":"#ff80aa","primary-container":"#b3004e","surface-container-highest":"#28283e","on-error":"#1a0000","inverse-surface":"#e8e0f0","surface":"#0f0f1a","on-surface":"#e8e0f0","surface-container":"#141422","secondary-fixed":"#c0fff4","secondary-container":"#004d3d","on-tertiary-fixed-variant":"#665200","on-primary-fixed":"#3d0020","secondary-fixed-dim":"#00e6b8","outline":"#5a5068","error-container":"#3d0f0f","on-background":"#e8e0f0","surface-tint":"#ff2d78","tertiary":"#ffe04a","on-tertiary":"#1a1000","inverse-primary":"#8c0038","tertiary-fixed":"#fff0c0","error":"#ff4444","surface-dim":"#0f0f1a","tertiary-container":"#665200","surface-bright":"#1a1a2e","surface-container-lowest":"#0a0a12","background":"#0a0a12"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{},"fontFamily":{"headline":["Sora"],"display":["Sora"],"body":["Inter"],"label":["Space Grotesk"]},"fontSize":{}}}}</script></head><body class="bg-background font-body text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col pt-4 pb-6 shadow-[2px_0_16px_rgba(0,0,0,0.5)]"><div class="px-6 h-12 flex items-center gap-3 mb-6"><img alt="SlipFlow Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue_wrTGrk6Phwpda5D5taAq3vaE3tGK9a_jTf2FBQQ_ngfK4rccLSvKcASvzyLqLpSQF93BePO_y-IlDV1rvvX6rej8XtUG-JNEoZTd12nM_1ifXI7Px3G2802zRzMPg5dBOraIM6OfGyjNTcglD_eVvZVxcToOTdWnHvuP4g6WZEnkKTyX1bYrBscpU6bLquCH4itf6UrG9HytW4oPZeyvY4lVmX7WoaZE1lQdMI"/><span class="text-lg font-headline font-extrabold tracking-tight text-on-surface">Slip<span class="text-primary">Flow</span></span></div><div class="px-6 mb-4"><div class="p-3 rounded-xl bg-surface-container shadow-[0_0_16px_rgba(0,255,204,0.06)]"><div class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider">ยอดเงินคงเหลือสุทธิ</div><div class="text-base font-label font-bold text-secondary mt-0.5">฿124,580.00</div><div class="text-[10px] font-label text-tertiary mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block animate-pulse"></span>ซิงค์สลิปล่าสุด: วันนี้</div></div></div><nav class="flex-1 px-4 space-y-1 overflow-y-auto" data-active-classes="bg-surface-container-high text-secondary font-semibold shadow-[0_0_16px_rgba(0,255,204,0.15)]"><a class="flex items-center px-3.5 py-2.5 rounded-xl text-sm font-label text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-3" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>แดชบอร์ด</a><a aria-current="page" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all gap-3 bg-surface-container-high text-secondary font-semibold shadow-[0_0_16px_rgba(0,255,204,0.15)]" data-path="upload-slip" href="#"><span class="material-symbols-outlined text-[20px]">document_scanner</span>อัปโหลดสลิป</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-sm font-label text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-3" data-path="transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span>รายการธุรกรรม</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-sm font-label text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-3" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">insights</span>รายงาน</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-sm font-label text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-3" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>การตั้งค่า</a></nav><div class="px-4 pt-4"><div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="text-xs font-semibold truncate text-on-surface">Cyber Operator</span><span class="text-[10px] text-on-surface-variant truncate font-label">ID #88204-SF</span></div><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span></a></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.4)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-3"><div class="h-2 w-2 rounded-full bg-secondary shadow-[0_0_8px_#00ffcc]"></div><span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">SLIPFLOW // CORE SYSTEM ONLINE</span></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-all shadow-[0_0_8px_rgba(0,0,0,0.2)]"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="relative w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all shadow-[0_0_8px_rgba(0,0,0,0.2)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_#ff2d78]"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-8 bg-background min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Telemetry & Header Section -->
+<section class="relative pt-6 pb-8 overflow-hidden">
+<div class="absolute -top-24 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute -top-10 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 relative z-10">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-label text-secondary mb-3 shadow-[0_0_12px_rgba(0,255,204,0.15)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span>STEP 01 // INGESTION ENGINE</span>
+</div>
+<h1 class="text-3xl lg:text-4xl font-headline font-bold text-on-surface tracking-tight">
+          อัปโหลดสลิปโอนเงิน / <span class="text-primary [text-shadow:0_0_16px_rgba(255,45,120,0.5)]">ใบเสร็จ</span>
+</h1>
+<p class="text-on-surface-variant font-body text-sm lg:text-base mt-2 max-w-2xl">
+          ลากและวางสลิปเพื่อสแกนและดึงข้อมูลอัตโนมัติด้วยระบบ AI OCR ความแม่นยำสูง รองรับทุกธนาคารในไทย
+        </p>
+</div>
+<!-- Quick Metrics Pill -->
+<div class="flex items-center gap-4 bg-surface-container px-4 py-2.5 rounded-xl shadow-lg">
+<div class="flex flex-col">
+<span class="text-[10px] font-label uppercase text-on-surface-variant">OCR Engine Status</span>
+<span class="text-xs font-label text-secondary font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> V3.4 NEURAL LATENCY 140ms
+          </span>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label uppercase text-on-surface-variant">โควตาวันนี้</span>
+<span class="text-xs font-label text-on-surface font-bold">142 / 500 รายการ</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Grid: Dropzone & Sidebar Queue -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start relative z-10">
+<!-- Left Column: Upload Core (7 cols) -->
+<div class="xl:col-span-7 space-y-6">
+<!-- Main Dropzone Box -->
+<div class="group relative rounded-2xl bg-surface-container p-8 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_24px_rgba(0,255,204,0.18)] cursor-pointer overflow-hidden" id="dropzone">
+<!-- Interactive Gradient Ambient Aura -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-primary/20 transition-all duration-500"></div>
+<input accept="image/jpeg,image/png,application/pdf" class="hidden" id="slipFileInput" multiple="" type="file"/>
+<div class="relative z-10 flex flex-col items-center text-center py-6 px-4">
+<!-- Animated Radar Scanner Graphic -->
+<div class="relative mb-6">
+<div class="w-24 h-24 rounded-2xl bg-surface-container-high flex items-center justify-center shadow-[inset_0_0_16px_rgba(0,255,204,0.12)] group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-[44px] text-secondary group-hover:text-primary transition-colors">document_scanner</span>
+</div>
+<div class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-secondary/40 to-primary/40 -z-10 blur-sm opacity-60 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute -top-1 -right-1 flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
+</div>
+</div>
+<h2 class="text-xl font-headline font-bold text-on-surface mb-2">
+            ลากสลิปมาวางที่นี่ หรือคลิกเพื่อค้นหา
+          </h2>
+<p class="text-sm font-body text-on-surface-variant max-w-md mb-6 leading-relaxed">
+            ระบบรองรับไฟล์นามสกุล JPG, PNG หรือ PDF สลิปจาก Mobile Banking ทุกธนาคาร ขนาดไฟล์สูงสุดไม่เกิน 10MB
+          </p>
+<div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-xs font-label text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">image</span> JPG / JPEG
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-xs font-label text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">filter</span> PNG 24-BIT
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-xs font-label text-tertiary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF E-SLIP
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-xs font-label text-on-surface-variant">
+              MAX 10 MB
+            </span>
+</div>
+<!-- Select File Button -->
+<button class="relative inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(0,255,204,0.15)] hover:shadow-[0_0_25px_rgba(0,255,204,0.35)] hover:text-secondary transition-all active:scale-95" onclick="document.getElementById('slipFileInput').click()" type="button">
+<span class="material-symbols-outlined text-secondary text-lg">add_photo_alternate</span>
+<span>เลือกไฟล์สลิปจากอุปกรณ์</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Utilities (Batch & Camera Scan) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Quick Batch Upload Card -->
+<div class="p-5 rounded-2xl bg-surface-container flex items-start gap-4 hover:bg-surface-container-high transition-colors cursor-pointer group shadow-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high group-hover:bg-primary/20 flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary text-2xl transition-colors">layers</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-headline font-semibold text-on-surface">อัปโหลดสลิปแบบกลุ่ม</h3>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label bg-primary/20 text-primary">BATCH x20</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body mt-1 leading-normal">
+              อัปโหลดครั้งละหลายรายการ เหมาะสำหรับการสรุปยอดบิลประจำวันหรือรอบสต็อก
+            </p>
+</div>
+</div>
+<!-- Camera Mobile Scan Card -->
+<div class="p-5 rounded-2xl bg-surface-container flex items-start gap-4 hover:bg-surface-container-high transition-colors cursor-pointer group shadow-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high group-hover:bg-secondary/20 flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-secondary text-2xl">photo_camera</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-headline font-semibold text-on-surface">เปิดกล้องสแกนสด</h3>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label bg-secondary/20 text-secondary">LIVE AUTO-DETECT</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body mt-1 leading-normal">
+              จับคู่เฟรมอัตโนมัติพร้อมตัดขอบและปรับแต่งระดับแสงด้วยคอมพิวเตอร์วิทัศน์
+            </p>
+</div>
+</div>
+</div>
+<!-- Supported Banks Indicator Strip -->
+<div class="p-5 rounded-2xl bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between mb-3.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">verified_user</span>
+<span class="text-xs font-label uppercase tracking-wider text-on-surface-variant">รองรับสลิปสแกนตรวจสอบทุกธนาคารชั้นนำ</span>
+</div>
+<span class="text-[11px] font-label text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            เชื่อมต่อ ธปท. Direct API
+          </span>
+</div>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
+<!-- KBANK -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#138f2d] shrink-0 shadow-[0_0_6px_#138f2d]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">KBANK</span>
+<span class="block text-[9px] text-on-surface-variant truncate">กสิกรไทย</span>
+</div>
+</div>
+<!-- SCB -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#4e2e7f] shrink-0 shadow-[0_0_6px_#4e2e7f]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">SCB</span>
+<span class="block text-[9px] text-on-surface-variant truncate">ไทยพาณิชย์</span>
+</div>
+</div>
+<!-- KTB -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#1ba5e1] shrink-0 shadow-[0_0_6px_#1ba5e1]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">KTB</span>
+<span class="block text-[9px] text-on-surface-variant truncate">กรุงไทย</span>
+</div>
+</div>
+<!-- BBL -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#1e3c87] shrink-0 shadow-[0_0_6px_#1e3c87]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">BBL</span>
+<span class="block text-[9px] text-on-surface-variant truncate">กรุงเทพ</span>
+</div>
+</div>
+<!-- PromptPay -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#005a9c] shrink-0 shadow-[0_0_6px_#005a9c]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">PromptPay</span>
+<span class="block text-[9px] text-on-surface-variant truncate">พร้อมเพย์</span>
+</div>
+</div>
+<!-- TrueMoney -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="w-3.5 h-3.5 rounded-full bg-[#f37023] shrink-0 shadow-[0_0_6px_#f37023]"></div>
+<div class="min-w-0">
+<span class="block text-xs font-label font-bold text-on-surface truncate">TrueMoney</span>
+<span class="block text-[9px] text-on-surface-variant truncate">ทรูมันนี่</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Verification Staging & Inspection Box (5 cols) -->
+<div class="xl:col-span-5 space-y-6">
+<!-- Active Queue Item Ready Card -->
+<div class="rounded-2xl bg-surface-container p-6 shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">hourglass_top</span>
+<h3 class="font-headline font-bold text-base text-on-surface">สลิปล่าสุดที่กำลังประมวลผล</h3>
+</div>
+<span class="px-2.5 py-1 rounded-full text-[10px] font-label font-bold bg-secondary/15 text-secondary flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,255,204,0.2)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            พร้อมตรวจสอบ
+          </span>
+</div>
+<!-- Slip Specimen Preview Card -->
+<div class="bg-surface-container-low rounded-xl p-4 mb-5">
+<div class="flex gap-4 items-start">
+<!-- Thumbnail preview with overlay badge -->
+<div class="relative w-28 h-36 rounded-lg overflow-hidden bg-surface-container-highest shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a crisp digital mobile banking transaction slip displayed on a sleek futuristic glass slate device, vibrant green Thai bank emblem glowing softly, sharp QR code details visible against a dark cyber neon background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjUwkACQiRQdEIeq_DkTftMNpbv3nyn3DvZ2leY71NEVdty99GkgOCzV4IKHNHtKfkL-hrWsWMpP3yweTpK_myJdcrETiNml3lOa0ToMooYndor4IEuck0wNvUMDTehmDsQio0FK1wR2xtSywlR6kFaRuSGbEQfHJ0UD5dnwEJMTBwHt99r2Dk0W-GmVfDDbbCziT0IqgHvA7Z0DpkRkh-rQTgU0VJrIzuXj3KpvY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-1.5 left-1.5 text-[9px] font-label font-bold text-secondary bg-surface-container-lowest/90 px-1 rounded">
+                SLIP-IMG
+              </span>
+</div>
+<!-- Metadata specs -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-36 py-0.5">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label font-bold text-on-surface truncate">kbank_slip_20250512.jpg</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant block mt-0.5">1.84 MB • ธ.กสิกรไทย</span>
+</div>
+<!-- Real-time extraction preview chips -->
+<div class="space-y-1.5 my-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">ยอดเงินที่ตรวจพบ</span>
+<span class="font-label font-bold text-secondary text-sm">฿1,450.00</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">QR Verification</span>
+<span class="font-label text-on-surface text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">check_circle</span> ตรวจพบโค้ด
+                  </span>
+</div>
+</div>
+<!-- Upload Progress Indicator -->
+<div>
+<div class="flex justify-between text-[11px] font-label text-on-surface-variant mb-1">
+<span>สถานะการอัปโหลด</span>
+<span class="text-secondary font-semibold">100% เสร็จสิ้น</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary shadow-[0_0_8px_#00ffcc] w-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- High Impact Cyber CTA Button -->
+<button class="w-full relative group overflow-hidden py-3.5 px-6 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold text-sm tracking-wider flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_24px_rgba(255,45,120,0.25)] hover:shadow-[0_0_32px_rgba(255,45,120,0.45)] hover:text-primary active:scale-[0.98]">
+<span class="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+<span class="relative z-10">ดำเนินการตรวจสอบข้อมูล (VERIFY)</span>
+<span class="material-symbols-outlined text-primary text-xl group-hover:translate-x-1.5 transition-transform relative z-10">arrow_forward</span>
+</button>
+</div>
+<!-- Quick Tips Box with Cyber Glitch Accent -->
+<div class="rounded-2xl bg-surface-container p-6 shadow-lg relative">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-lg bg-tertiary/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-lg">lightbulb</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-on-surface">คำแนะนำเพื่อการสแกนที่แม่นยำ</h4>
+<p class="text-[11px] text-on-surface-variant font-body">เพิ่มประสิทธิภาพการประมวลผลให้รวดเร็วและถูกต้อง 99.8%</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-sm">wb_sunny</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">แสงสว่างเพียงพอและทั่วถึง</div>
+<p class="text-[11px] text-on-surface-variant font-body mt-0.5 leading-relaxed">
+                หลีกเลี่ยงเงาสะท้อนจากหลอดไฟ หรือเงามือที่บดบังส่วนข้อความสำคัญ
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-sm">center_focus_strong</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">ตัวหนังสือคมชัด ไม่เบลอ</div>
+<p class="text-[11px] text-on-surface-variant font-body mt-0.5 leading-relaxed">
+                ภาพต้นฉบับควรมีความละเอียดสูง ปราศจากการสั่นไหวของกล้องขณะบันทึกภาพ
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5 text-tertiary">
+<span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">เห็น QR Code และรหัสอ้างอิงชัดเจน</div>
+<p class="text-[11px] text-on-surface-variant font-body mt-0.5 leading-relaxed">
+                อย่าให้ขอบของคิวอาร์โค้ดขาดหาย เพื่อให้ระบบตรวจสอบลายเซ็นดิจิทัลจากสถาบันการเงินได้ทันที
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Stream Slip Process Graphic -->
+<div class="p-4 rounded-xl bg-surface-container-lowest flex items-center justify-between text-xs font-label text-on-surface-variant shadow-inner">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>BOT ENGINE OCR: READY FOR REAL-TIME PARSING</span>
+</div>
+<span class="text-secondary font-bold">256-BIT ENCRYPTED</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple drag & drop interaction highlighting
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('slipFileInput');
+
+  if (dropzone && fileInput) {
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('bg-surface-container-high');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('bg-surface-container-high');
+      }, false);
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+      }
+    }, false);
+  }
+</script></main></div></body></html>
