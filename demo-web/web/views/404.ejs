@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="dark" lang="th">
+<%- include('partials/head', { title: '404 · SlipFlow' }) %>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen">
+<main class="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+  <div class="absolute -top-24 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="relative z-10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-label text-primary mb-5 shadow-[0_0_12px_rgba(255,45,120,0.15)]">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+      <span>ERROR // SIGNAL LOST</span>
+    </div>
+    <h1 class="text-6xl font-headline font-extrabold text-on-surface tracking-tight [text-shadow:0_0_24px_rgba(255,45,120,0.5)]">404</h1>
+    <p class="text-on-surface-variant font-body text-sm mt-3 mb-8">ไม่พบเส้นทางที่คุณค้นหาในระบบ SlipFlow</p>
+    <a class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold text-sm shadow-[0_0_20px_rgba(0,255,204,0.15)] hover:shadow-[0_0_25px_rgba(0,255,204,0.35)] hover:text-secondary transition-all" href="/dashboard">
+      <span class="material-symbols-outlined text-secondary text-lg">home</span>
+      กลับหน้าแดชบอร์ด
+    </a>
+  </div>
+</main>
+</body>
+</html>

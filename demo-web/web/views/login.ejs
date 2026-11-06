@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="dark" lang="th">
+<%- include('partials/head', { title: 'เข้าสู่ระบบ · SlipFlow' }) %>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen">
+<main class="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+  <div class="absolute -top-24 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="relative z-10 w-full max-w-sm">
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <span class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-primary text-[22px]">bolt</span>
+      </span>
+      <span class="text-2xl font-headline font-extrabold tracking-tight text-on-surface">Slip<span class="text-primary">Flow</span></span>
+    </div>
+
+    <form action="/login" class="rounded-2xl bg-surface-container p-8 shadow-[0_8px_30px_rgba(0,0,0,0.4)]" method="post">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-label text-secondary mb-5 shadow-[0_0_12px_rgba(0,255,204,0.15)]">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+        <span>SECURE ACCESS // LOGIN</span>
+      </div>
+      <h1 class="text-xl font-headline font-bold text-on-surface mb-6">เข้าสู่ระบบปฏิบัติการ</h1>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-[11px] font-label uppercase tracking-wider text-on-surface-variant mb-1.5" for="loginEmail">อีเมล</label>
+          <input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 focus:shadow-[0_4px_12px_-4px_rgba(0,255,204,0.3)] rounded-lg text-sm text-on-surface px-3.5 py-2.5 transition-all" id="loginEmail" name="email" placeholder="operator@slipflow.io" type="email" />
+        </div>
+        <div>
+          <label class="block text-[11px] font-label uppercase tracking-wider text-on-surface-variant mb-1.5" for="loginPassword">รหัสผ่าน</label>
+          <input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 focus:shadow-[0_4px_12px_-4px_rgba(0,255,204,0.3)] rounded-lg text-sm text-on-surface px-3.5 py-2.5 transition-all" id="loginPassword" name="password" placeholder="••••••••" type="password" />
+        </div>
+      </div>
+
+      <button class="w-full mt-6 relative group overflow-hidden py-3.5 px-6 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold text-sm tracking-wider flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_24px_rgba(255,45,120,0.25)] hover:shadow-[0_0_32px_rgba(255,45,120,0.45)] hover:text-primary active:scale-[0.98]" type="submit">
+        <span class="relative z-10">เข้าสู่ระบบ</span>
+        <span class="material-symbols-outlined text-primary text-xl group-hover:translate-x-1.5 transition-transform relative z-10">arrow_forward</span>
+      </button>
+
+      <p class="text-center text-[11px] font-label text-on-surface-variant mt-6">256-BIT ENCRYPTED &middot; SLIPFLOW CORE SYSTEM</p>
+    </form>
+  </div>
+</main>
+</body>
+</html>

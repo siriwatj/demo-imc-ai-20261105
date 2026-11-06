@@ -1,0 +1,14 @@
+.playwright-mcp/
+node_modules/
+*.log
+
+# Env files
+.env
+.env.local
+
+# Claude local settings
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db

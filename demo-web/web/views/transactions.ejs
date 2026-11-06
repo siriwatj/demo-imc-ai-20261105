@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="dark" lang="th">
+<%- include('partials/head', { title: 'รายการธุรกรรม · SlipFlow' }) %>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen">
+<%- include('partials/sidebar', { activePath, balance }) %>
+<div class="md:pl-64">
+<%- include('partials/header') %>
+<main class="relative pt-16 w-full px-8 bg-background min-h-screen">
+<div class="flex flex-col w-full pb-16">
+
+<section class="relative pt-6 pb-8">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-label text-secondary mb-3 shadow-[0_0_12px_rgba(0,255,204,0.15)]">
+    <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+    <span>LEDGER // ALL RECORDS</span>
+  </div>
+  <h1 class="text-3xl lg:text-4xl font-headline font-bold text-on-surface tracking-tight">รายการธุรกรรม</h1>
+  <p class="text-on-surface-variant font-body text-sm lg:text-base mt-2 max-w-2xl">สลิปและใบเสร็จทั้งหมดที่ผ่านการประมวลผลด้วยระบบ OCR</p>
+</section>
+
+<div class="rounded-2xl bg-surface-container shadow-xl overflow-hidden">
+  <table class="w-full text-left">
+    <thead>
+      <tr class="bg-surface-container-high text-[11px] font-label uppercase tracking-wider text-on-surface-variant">
+        <th class="px-6 py-3">ไฟล์</th>
+        <th class="px-6 py-3">ธนาคาร</th>
+        <th class="px-6 py-3">จำนวนเงิน</th>
+        <th class="px-6 py-3">สถานะ</th>
+        <th class="px-6 py-3">วันที่</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% const statusMap = { verified: ['ตรวจสอบแล้ว', 'text-secondary bg-secondary/15'], processing: ['กำลังประมวลผล', 'text-tertiary bg-tertiary/15'], review: ['ต้องตรวจสอบ', 'text-primary bg-primary/15'] }; %>
+      <% slips.forEach((slip) => { %>
+      <% const bank = getBank(slip.bankCode); %>
+      <% const [statusLabel, statusClass] = statusMap[slip.status]; %>
+      <tr class="border-t border-outline-variant/40 hover:bg-surface-container-high/60 transition-colors">
+        <td class="px-6 py-3.5">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-on-surface-variant text-base">description</span>
+            <span class="text-xs font-label text-on-surface"><%= slip.fileName %></span>
+          </div>
+        </td>
+        <td class="px-6 py-3.5">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full shrink-0" style="background-color: <%= bank.color %>; box-shadow: 0 0 6px <%= bank.color %>"></span>
+            <span class="text-xs font-label text-on-surface"><%= bank.code %></span>
+          </div>
+        </td>
+        <td class="px-6 py-3.5 text-xs font-label font-bold text-secondary">฿<%= Number(slip.amount).toLocaleString('en-US', { minimumFractionDigits: 2 }) %></td>
+        <td class="px-6 py-3.5">
+          <span class="px-2.5 py-1 rounded-full text-[10px] font-label font-bold <%= statusClass %>"><%= statusLabel %></span>
+        </td>
+        <td class="px-6 py-3.5 text-xs font-body text-on-surface-variant"><%= slip.uploadedAt.toLocaleDateString('th-TH') %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</main>
+</div>
+</body>
+</html>

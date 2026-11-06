@@ -1,0 +1,56 @@
+<%
+const navItems = [
+  { path: 'dashboard', label: 'แดชบอร์ด', icon: 'grid_view' },
+  { path: 'upload-slip', label: 'อัปโหลดสลิป', icon: 'document_scanner' },
+  { path: 'transactions', label: 'รายการธุรกรรม', icon: 'receipt_long' },
+  { path: 'reports', label: 'รายงาน', icon: 'insights' },
+  { path: 'settings', label: 'การตั้งค่า', icon: 'settings' },
+];
+%>
+<div id="sidebar-backdrop" onclick="toggleSidebar()" onkeydown="event.key === 'Enter' && toggleSidebar()" role="button" tabindex="-1" aria-label="ปิดเมนู" class="fixed inset-0 bg-black/60 z-40 hidden md:hidden"></div>
+<aside id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col pt-4 pb-6 shadow-[2px_0_16px_rgba(0,0,0,0.5)] -translate-x-full md:translate-x-0 transition-transform duration-200 ease-out">
+  <div class="px-6 h-12 flex items-center gap-3 mb-6">
+    <span class="w-7 h-7 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+      <span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+    </span>
+    <span class="text-lg font-headline font-extrabold tracking-tight text-on-surface flex-1">Slip<span class="text-primary">Flow</span></span>
+    <button onclick="toggleSidebar()" class="md:hidden text-on-surface-variant hover:text-primary transition-colors" aria-label="ปิดเมนู">
+      <span class="material-symbols-outlined text-[20px]">close</span>
+    </button>
+  </div>
+  <div class="px-6 mb-4">
+    <div class="p-3 rounded-xl bg-surface-container shadow-[0_0_16px_rgba(0,255,204,0.06)]">
+      <div class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider">ยอดเงินคงเหลือสุทธิ</div>
+      <div class="text-base font-label font-bold text-secondary mt-0.5">฿<%= Number(balance).toLocaleString('en-US', { minimumFractionDigits: 2 }) %></div>
+      <div class="text-[10px] font-label text-tertiary mt-1 flex items-center gap-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block animate-pulse"></span>ซิงค์สลิปล่าสุด: วันนี้
+      </div>
+    </div>
+  </div>
+  <nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+    <% navItems.forEach((item) => { %>
+      <% const isActive = activePath === item.path; %>
+      <a
+        href="/<%= item.path %>"
+        <%= isActive ? 'aria-current="page"' : '' %>
+        class="flex items-center px-3.5 py-2.5 rounded-xl text-sm font-label transition-all gap-3 <%= isActive ? 'bg-surface-container-high text-secondary font-semibold shadow-[0_0_16px_rgba(0,255,204,0.15)]' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface' %>"
+      >
+        <span class="material-symbols-outlined text-[20px]"><%= item.icon %></span><%= item.label %>
+      </a>
+    <% }) %>
+  </nav>
+  <div class="px-4 pt-4">
+    <div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container">
+      <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+      </div>
+      <div class="flex flex-col min-w-0 flex-1">
+        <span class="text-xs font-semibold truncate text-on-surface">Cyber Operator</span>
+        <span class="text-[10px] text-on-surface-variant truncate font-label">ID #88204-SF</span>
+      </div>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/login">
+        <span class="material-symbols-outlined text-[18px]">logout</span>
+      </a>
+    </div>
+  </div>
+</aside>

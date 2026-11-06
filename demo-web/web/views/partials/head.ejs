@@ -1,0 +1,93 @@
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title><%= typeof title !== 'undefined' ? title : 'SlipFlow' %></title>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  ::-webkit-scrollbar { display: none; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'on-surface-variant': '#a098b0',
+        'surface-container-high': '#1e1e30',
+        'on-primary-fixed-variant': '#8c0038',
+        primary: '#ff2d78',
+        'on-secondary-container': '#c0fff4',
+        'on-primary': '#1a0010',
+        secondary: '#00ffcc',
+        'on-secondary-fixed-variant': '#004d4d',
+        'on-secondary-fixed': '#001a1a',
+        'primary-fixed': '#ffe0ec',
+        'outline-variant': '#302840',
+        'surface-container-low': '#111118',
+        'inverse-on-surface': '#0a0a12',
+        'surface-variant': '#1e1e30',
+        'tertiary-fixed-dim': '#ffe04a',
+        'on-secondary': '#001a1a',
+        'on-tertiary-container': '#fff0c0',
+        'on-tertiary-fixed': '#1a1000',
+        'on-error-container': '#ffa0a0',
+        'on-primary-container': '#ffe0ec',
+        'primary-fixed-dim': '#ff80aa',
+        'primary-container': '#b3004e',
+        'surface-container-highest': '#28283e',
+        'on-error': '#1a0000',
+        'inverse-surface': '#e8e0f0',
+        surface: '#0f0f1a',
+        'on-surface': '#e8e0f0',
+        'surface-container': '#141422',
+        'secondary-fixed': '#c0fff4',
+        'secondary-container': '#004d3d',
+        'on-tertiary-fixed-variant': '#665200',
+        'on-primary-fixed': '#3d0020',
+        'secondary-fixed-dim': '#00e6b8',
+        outline: '#5a5068',
+        'error-container': '#3d0f0f',
+        'on-background': '#e8e0f0',
+        'surface-tint': '#ff2d78',
+        tertiary: '#ffe04a',
+        'on-tertiary': '#1a1000',
+        'inverse-primary': '#8c0038',
+        'tertiary-fixed': '#fff0c0',
+        error: '#ff4444',
+        'surface-dim': '#0f0f1a',
+        'tertiary-container': '#665200',
+        'surface-bright': '#1a1a2e',
+        'surface-container-lowest': '#0a0a12',
+        background: '#0a0a12',
+      },
+      borderRadius: { DEFAULT: '0.125rem', lg: '0.25rem', xl: '0.5rem', full: '0.75rem' },
+      fontFamily: {
+        headline: ['Sora'],
+        display: ['Sora'],
+        body: ['Inter'],
+        label: ['Space Grotesk'],
+      },
+    },
+  },
+};
+</script>
+<script>
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('-translate-x-full');
+  document.getElementById('sidebar-backdrop').classList.toggle('hidden');
+}
+</script>
+</head>

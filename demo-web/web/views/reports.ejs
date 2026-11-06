@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="dark" lang="th">
+<%- include('partials/head', { title: 'รายงาน · SlipFlow' }) %>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen">
+<%- include('partials/sidebar', { activePath, balance }) %>
+<div class="md:pl-64">
+<%- include('partials/header') %>
+<main class="relative pt-16 w-full px-8 bg-background min-h-screen">
+<div class="flex flex-col w-full pb-16">
+
+<section class="relative pt-6 pb-8">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-label text-secondary mb-3 shadow-[0_0_12px_rgba(0,255,204,0.15)]">
+    <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+    <span>ANALYTICS // SPEND INTELLIGENCE</span>
+  </div>
+  <h1 class="text-3xl lg:text-4xl font-headline font-bold text-on-surface tracking-tight">รายงาน</h1>
+  <p class="text-on-surface-variant font-body text-sm lg:text-base mt-2 max-w-2xl">สรุปยอดการใช้จ่ายจากสลิปที่สแกนทั้งหมด แยกตามธนาคารและช่วงเวลา</p>
+</section>
+
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+  <div class="xl:col-span-7 rounded-2xl bg-surface-container p-6 shadow-xl">
+    <h3 class="font-headline font-bold text-base text-on-surface mb-6">ยอดใช้จ่ายรายเดือน</h3>
+    <% const maxMonthly = Math.max(...monthlyTotals.map((m) => m.total), 1); %>
+    <div class="flex items-end gap-4 h-48">
+      <% monthlyTotals.forEach((m) => { %>
+      <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+        <span class="text-[10px] font-label text-on-surface-variant"><%= m.total > 0 ? Number(m.total).toLocaleString('en-US') : '' %></span>
+        <div class="w-full rounded-t-lg bg-gradient-to-t from-primary to-secondary shadow-[0_0_16px_rgba(0,255,204,0.25)]" style="height: <%= Math.max((m.total / maxMonthly) * 100, 3) %>%"></div>
+        <span class="text-[11px] font-label text-on-surface-variant"><%= m.label %></span>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <div class="xl:col-span-5 rounded-2xl bg-surface-container p-6 shadow-xl">
+    <h3 class="font-headline font-bold text-base text-on-surface mb-6">แยกตามธนาคาร</h3>
+    <% const maxBank = Math.max(...bankTotals.map((b) => b.total), 1); %>
+    <div class="space-y-4">
+      <% bankTotals.forEach((entry) => { %>
+      <div>
+        <div class="flex items-center justify-between mb-1.5">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: <%= entry.bank.color %>; box-shadow: 0 0 6px <%= entry.bank.color %>"></span>
+            <span class="text-xs font-label font-bold text-on-surface"><%= entry.bank.code %></span>
+            <span class="text-[10px] text-on-surface-variant font-body"><%= entry.count %> รายการ</span>
+          </div>
+          <span class="text-xs font-label font-bold text-secondary">฿<%= Number(entry.total).toLocaleString('en-US') %></span>
+        </div>
+        <div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+          <div class="h-full" style="width: <%= (entry.total / maxBank) * 100 %>%; background-color: <%= entry.bank.color %>; box-shadow: 0 0 8px <%= entry.bank.color %>"></div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<div class="rounded-2xl bg-surface-container-low p-5 shadow-sm mt-8 flex items-center justify-between text-xs font-label text-on-surface-variant">
+  <span>รวมสลิปทั้งหมดในระบบ: <span class="text-on-surface font-bold"><%= slips.length %></span> รายการ</span>
+  <span class="text-secondary font-bold">AUTO-SYNCED EVERY 24H</span>
+</div>
+
+</div>
+</main>
+</div>
+</body>
+</html>
